@@ -16,7 +16,7 @@ Follow these steps to set up and run the Angular app:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/your-angular-app.git
+   git clone https://github.com/ahmedSelem/KAPI_Task.git
    cd your-angular-app
 
 2. **Install Dependencies::**
