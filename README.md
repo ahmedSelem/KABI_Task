@@ -31,7 +31,6 @@ Follow these steps to set up and run the Angular app:
 
 ## Screenshots of the final result
 
-   ```bash
    ![All Jobs](./src/assets/images/git/all-jobs.jpeg)
    
    ![Add Job](./src/assets/images/git/add-modal.PNG)
