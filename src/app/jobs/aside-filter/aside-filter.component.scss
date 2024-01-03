@@ -1,0 +1,10 @@
+aside {
+    :is(.sector-checks, .country-checks, .city-checks) {
+        .form-check {
+            .form-check-input {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

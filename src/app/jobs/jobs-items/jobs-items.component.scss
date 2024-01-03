@@ -1,0 +1,56 @@
+.jobs-list {
+    .post-form {
+        .search-form {
+            width: 80%;
+            margin-right: 3%;
+        }
+
+        .add-post {
+            width: 17%;
+        }
+    }
+
+    .job-item {
+        &:hover {
+            ul {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        img {
+
+            border-radius: 4px;
+        }
+
+        .job-desc {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            height: 1.2em;
+            white-space: nowrap;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            width: 95%;
+            color: #5a5858cc;
+            font-size: 14px;
+        }
+
+        ul {
+            display: none;
+            opacity: 0;
+            transition: all .5s ease;
+
+            li {
+                a {
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+
+                    i {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@font-face {
+    src: url('../../../../assets/fonts/Tajawal-Regular.ttf');
+    font-family: Tajawal;
+}
+:root {
+    --mainFont: Tajawal;
+    --mainColor: #2ecc71
+}
+
+
+
+* {
+    font-family: var(--mainFont);
+}
+
+.cursor-pointer {
+    cursor: pointer
+}
+.main-bg {
+    background-color: var(--mainColor) !important;
+    &:hover {
+        background-color: var(--mainColor);;
+    } 
+}
+.main-color {
+    color: var(--mainColor);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid var(--mainColor)
+}
+input[type="checkbox"]:checked  {
+    background-color: var(--mainColor);
+    border: 1px solid var(--mainColor); 
+}

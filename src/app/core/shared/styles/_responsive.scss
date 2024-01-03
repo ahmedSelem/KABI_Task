@@ -1,0 +1,16 @@
+
+@media (max-width: 992px) {
+    .jobs-list {
+        .post-form {
+            .search-form {
+                width: 57% !important;
+            }
+            .add-post {
+                width: 40% !important;
+                .btn {
+                    font-size: 14px;
+                }
+            }
+        }
+    }   
+}

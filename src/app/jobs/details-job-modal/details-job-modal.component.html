@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{jobObj.jobTitle}} details</h4>
+    <button type="button" class="btn-close close pull-right" (click)="onClose()">
+    </button>
+</div>
+<div class="modal-body">
+    <ul class="list-unstyled">
+        <li class="d-flex align-items-center border-bottom mb-3 pb-3">
+            <strong class="text-capitalize fs-6 me-3">
+                job title: 
+            </strong>
+            <span class="d-inline-block bg-info-subtle py-1 px-3 rounded">
+                {{jobObj.jobTitle}}
+            </span>
+        </li>
+        <li class="d-flex align-items-center border-bottom mb-3 pb-3">
+            <strong class="text-capitalize fs-6 me-3">
+                sector: 
+            </strong>
+            <span class="d-inline-block bg-info-subtle py-1 px-3 rounded">
+                {{jobObj.sector}}
+            </span>
+        </li>
+        <li class="d-flex align-items-center border-bottom mb-3 pb-3">
+            <strong class="text-capitalize fs-6 me-3">
+                country: 
+            </strong>
+            <span class="d-inline-block bg-info-subtle py-1 px-3 rounded">
+                {{jobObj.country}}
+            </span>
+        </li>
+        <li class="d-flex align-items-center border-bottom mb-3 pb-3">
+            <strong class="text-capitalize fs-6 me-3">
+                city: 
+            </strong>
+            <span class="d-inline-block bg-info-subtle py-1 px-3 rounded">
+                {{jobObj.city}}
+            </span>
+        </li>
+        <li>
+            <strong class="text-capitalize fs-6 me-3">
+                full description: 
+            </strong>
+            <span class="d-inline-block bg-info-subtle py-1 px-3 rounded mt-2">
+                {{jobObj.description}}
+            </span>
+        </li>
+    </ul>
+</div>

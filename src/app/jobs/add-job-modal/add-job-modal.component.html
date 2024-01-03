@@ -1,0 +1,59 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Add Job</h4>
+    <button type="button" class="btn-close close pull-right" (click)="onClose()">
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="addForm" (submit)="addJob()">
+        <div class="row mb-3">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <label class="form-label">Job Title</label>
+                <input formControlName="jobTitle" type="text" class="form-control" placeholder="Type job title...">
+                @if (addForm.get('jobTitle')?.getError('required') && addForm.get('jobTitle')?.touched) {
+                <div class="invalid-error text-danger">
+                    This field is required
+                </div>
+                }
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Sector</label>
+                <select formControlName="sector" class="form-select">
+                    @for (item of sectorList; track $index) {
+                    <option [value]="item">{{item}}</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <label class="form-label">Country</label>
+                <select formControlName="country" class="form-select">
+                    @for (item of countryList; track $index) {
+                    <option [value]="item">{{item}}</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">City</label>
+                <select formControlName="city" class="form-select">
+                    @for (item of cityList; track $index) {
+                    <option [value]="item">{{item}}</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea formControlName="description" class="form-control" rows="5"
+                placeholder="Type description..."></textarea>
+            @if (addForm.get('description')?.getError('required') && addForm.get('description')?.touched) {
+            <div class="invalid-error text-danger">
+                This field is required
+            </div>
+            }
+        </div>
+        <div class="modal-footer mt-4 pb-0">
+            <button type="submit" class="btn text-white main-bg" [disabled]="addForm.invalid">Save changes</button>
+        </div>
+    </form>
+</div>

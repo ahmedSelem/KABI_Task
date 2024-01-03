@@ -1,0 +1,72 @@
+<div class="jobs-list">
+    <div class="post-form d-flex">
+        <form class="search-form mb-4">
+            <input type="text" class="form-control" name="searchTerm" placeholder="Search by job title"  [(ngModel)]="searchText"
+            (ngModelChange)="onSearchInputChange()">
+        </form>
+        <div class="add-post">
+            <button class="btn text-capitalize main-bg text-white w-100" (click)="openAddModal()">add new job</button>
+        </div>
+    </div>
+    
+    @for (post of postsList; track $index) {
+    <div class="job-item mb-3 border p-2 rounded">
+        <div class="row align-items-center">
+            <div class="col-md-2">
+                <img src="../../../assets/images/job_image.svg" class="w-100" />
+            </div>
+            <div class="col-md-10 mt-3 mt-md-0">
+                <div class="item-header d-flex justify-content-between">
+                    <h3 class="job-title text-capitalize fw-bold h5">
+                      {{post.jobTitle}}
+                    </h3>
+                    <ul class="list-unstyled mb-0 d-flex align-items-center">
+                        <li class="me-3">
+                            <a class="d-block rounded-circle bg-info-subtle main-color text-center cursor-pointer" (click)="openDetailsModal(post)">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-block rounded-circle bg-danger-subtle text-center cursor-pointer" (click)="deleteJob((currentNumPage) * 10 + $index)">
+                                <i class="fa-solid fa-trash text-danger"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <span class="city-name">{{post.city}}, {{post.country}}</span>
+                <span class="sector-name d-block">
+                    {{post.sector}}
+                </span>
+                <p class="job-desc mb-0">
+                    {{post.description}}
+                </p>
+            </div>
+        </div>
+    </div>
+    }
+    <div class="row justify-content-end mt-5 mb-4 mb-lg-0">
+        <div class="col-md-10 d-flex justify-content-end">
+            <nav aria-label="Page navigation ">
+                <ul class="pagination justify-content-center mb-0">
+                    <li class="page-item prev-icon" [ngClass]="{'nav-disabled': currentNumPage == 0}">
+                        <a class="page-link cursor-pointer" (click)="onPrevPage()">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                    </li>
+
+                    @for (item of paginationNum; track $index) {
+                        <li class="page-item" [ngClass]="{'nav-active': $index == currentNumPage}">
+                            <a class="page-link cursor-pointer" (click)="fetchPostsListChanged($index)">{{item}}</a>
+                        </li>
+                    }
+
+                    <li class="page-item next-icon" [ngClass]="{'nav-disabled': currentNumPage == paginationNum.length - 1}">
+                        <a class="page-link cursor-pointer" (click)="onNextPage()">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<aside class="border p-3 rounded" appFixedAside>
+    <div class="sector-checks">
+        <div class="sec-title">
+            <h3 class="h5 text-capitalize mb-2">sector</h3>
+        </div>
+        @for (sector of sectorList; track $index) {
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" [value]="sector" [id]="'sectorChecked' + $index" (change)="onCheckboxChange(sectorList,$index, 'sectorChecked', 'sector')">
+                <label class="form-check-label ms-1" [for]="'sectorChecked' + $index">
+                   {{sector}}
+                </label>
+            </div>
+        }
+    </div>
+    <div class="country-checks pt-4 mt-4 border-top">
+        <div class="sec-title">
+            <h3 class="h5 text-capitalize mb-2">country</h3>
+        </div>
+        @for (country of countryList; track $index) {
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" [value]="country" [id]="'countryChecked' + $index" (change)="onCheckboxChange(countryList,$index, 'countryChecked', 'country')">
+                <label class="form-check-label ms-1" [for]="'countryChecked' + $index">
+                   {{country}}
+                </label>
+            </div>
+        }
+    </div>
+    <div class="city-checks pt-4 mt-4 border-top">
+        <div class="sec-title">
+            <h3 class="h5 text-capitalize mb-2">city</h3>
+        </div>
+        @for (city of cityList; track $index) {
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" [value]="city" [id]="'cityChecked' + $index" (change)="onCheckboxChange(cityList,$index, 'cityChecked', 'city')">
+                <label class="form-check-label ms-1" [for]="'cityChecked' + $index">
+                   {{city}}
+                </label>
+            </div>
+        }
+    </div>
+</aside>
